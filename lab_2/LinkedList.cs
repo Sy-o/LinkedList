@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace lab_2
 {
-    class LinkedList: IObservable
+    public class LinkedList: IObservable
     {
         private class Node
         {
@@ -53,14 +53,20 @@ namespace lab_2
             {
                 if (node == head)
                 {
-                    head.next.prev = null;
+                    if (node.next != null)
+                    {
+                        head.next.prev = null;
+                    }
                     head = head.next;
                 }
                 else
                 {
                     if (node == tail)
                     {
-                        tail.prev.next = null;
+                        if (node.prev != null)
+                        {
+                            tail.prev.next = null;
+                        }                        
                         tail = tail.prev;
                     }
                     else
@@ -75,6 +81,40 @@ namespace lab_2
             {
                 MessageBox.Show("No such item in the list!");
             }
+        }
+
+        public int IndexOf(string s)
+        {
+            int index = 0;
+            Node node = head;
+            while (node != null)
+            {
+                if (node.item == s)
+                    return index;
+                else
+                {
+                    node = node.next;
+                    index++;
+                }
+            }
+            return -1;
+        }
+
+        public string FindByIndex(int ind)
+        {
+            int index = 0;
+            Node node = head;
+            while (node != null)
+            {
+                if (index == ind)
+                    return node.item;
+                else
+                {
+                    node = node.next;
+                    index++;
+                }
+            }
+            return null;
         }
 
         private Node Find(string s)
