@@ -1,0 +1,7 @@
+D:\programming\C#\OSiSP\lab_2\TestForList\obj\Debug\TestForList.csprojResolveAssemblyReference.cache
+D:\programming\C#\OSiSP\lab_2\TestForList\bin\Debug\TestForList.dll
+D:\programming\C#\OSiSP\lab_2\TestForList\bin\Debug\TestForList.pdb
+D:\programming\C#\OSiSP\lab_2\TestForList\bin\Debug\lab_2.exe
+D:\programming\C#\OSiSP\lab_2\TestForList\bin\Debug\lab_2.pdb
+D:\programming\C#\OSiSP\lab_2\TestForList\obj\Debug\TestForList.dll
+D:\programming\C#\OSiSP\lab_2\TestForList\obj\Debug\TestForList.pdb
