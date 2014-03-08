@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace lab_2
 {
-    interface IObserver
+    public interface IObserver
     {
         void Update(string state);
     }
