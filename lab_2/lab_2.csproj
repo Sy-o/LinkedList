@@ -53,6 +53,8 @@
     <Compile Include="IObservable.cs" />
     <Compile Include="IObserver.cs" />
     <Compile Include="LinkedList.cs" />
+    <Compile Include="Observer1.cs" />
+    <Compile Include="Observer2.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
