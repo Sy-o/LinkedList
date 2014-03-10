@@ -44,6 +44,8 @@ namespace lab_2
                 tail.next = new Node(s, null, tail);
                 tail = tail.next;
             }
+
+            NotifyObservers("added item " + s);
         }
 
         public void Delete(string s)
@@ -76,10 +78,11 @@ namespace lab_2
                         node = null;
                     }
                 }
+                NotifyObservers("deleted item " + s);
             }
             else 
             {
-                MessageBox.Show("No such item in the list!");
+                NotifyObservers("Try to delete item" + s + ". No such item in the list!");
             }
         }
 
