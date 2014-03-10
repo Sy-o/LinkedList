@@ -33,6 +33,8 @@
             this.delBut = new System.Windows.Forms.Button();
             this.viewBox = new System.Windows.Forms.TextBox();
             this.observer1label = new System.Windows.Forms.Label();
+            this.compileBox = new System.Windows.Forms.TextBox();
+            this.compileBut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // inputItemBox
@@ -73,17 +75,37 @@
             // observer1label
             // 
             this.observer1label.AutoSize = true;
-            this.observer1label.Location = new System.Drawing.Point(14, 354);
+            this.observer1label.Location = new System.Drawing.Point(14, 346);
             this.observer1label.Name = "observer1label";
             this.observer1label.Size = new System.Drawing.Size(35, 13);
             this.observer1label.TabIndex = 4;
             this.observer1label.Text = "label1";
+            // 
+            // compileBox
+            // 
+            this.compileBox.Location = new System.Drawing.Point(220, 12);
+            this.compileBox.Multiline = true;
+            this.compileBox.Name = "compileBox";
+            this.compileBox.Size = new System.Drawing.Size(189, 319);
+            this.compileBox.TabIndex = 5;
+            // 
+            // compileBut
+            // 
+            this.compileBut.Location = new System.Drawing.Point(280, 337);
+            this.compileBut.Name = "compileBut";
+            this.compileBut.Size = new System.Drawing.Size(75, 23);
+            this.compileBut.TabIndex = 6;
+            this.compileBut.Text = "Compile!";
+            this.compileBut.UseVisualStyleBackColor = true;
+            this.compileBut.Click += new System.EventHandler(this.compileBut_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(421, 382);
+            this.Controls.Add(this.compileBut);
+            this.Controls.Add(this.compileBox);
             this.Controls.Add(this.observer1label);
             this.Controls.Add(this.viewBox);
             this.Controls.Add(this.delBut);
@@ -104,6 +126,8 @@
         private System.Windows.Forms.Button delBut;
         private System.Windows.Forms.TextBox viewBox;
         private System.Windows.Forms.Label observer1label;
+        private System.Windows.Forms.TextBox compileBox;
+        private System.Windows.Forms.Button compileBut;
     }
 }
 

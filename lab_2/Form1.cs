@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.CSharp;
+using System.CodeDom.Compiler;
 
 namespace lab_2
 {
@@ -47,6 +49,26 @@ namespace lab_2
             }
             else
                 MessageBox.Show("Enter item!");
-        }        
+        }
+
+        private void DynamicCompile(string textCode)
+        {
+            var csc = new CSharpCodeProvider(new Dictionary<string, string>() { { "CompilerVersion", "v3.5" } });
+            var parameters = new CompilerParameters(new[] { "mscorlib.dll", "System.Core.dll" }, "foo.exe", true);
+            parameters.GenerateExecutable = true;
+            CompilerResults results = csc.CompileAssemblyFromSource(parameters, textCode);
+            results.Errors.Cast<CompilerError>().ToList().ForEach(error => Console.WriteLine(error.ErrorText));
+        }
+
+        private void compileBut_Click(object sender, EventArgs e)
+        {
+            if (compileBox.Text != null)
+            {
+                DynamicCompile(@compileBox.Text);
+            }
+            else
+                MessageBox.Show("No code to run!");
+
+        }
     }
 }
