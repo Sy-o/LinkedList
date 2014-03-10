@@ -12,7 +12,8 @@ namespace lab_2
 {
     public partial class Form1 : Form
     {
-        LinkedList list = new LinkedList();
+        LinkedList list;
+        IObserver observer1, observer2;
         public Form1()
         {
             InitializeComponent();
@@ -20,7 +21,12 @@ namespace lab_2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            observer1label.Text = "";
+            list = new LinkedList();
+            observer1 = new Observer1(ref observer1label);
+            observer2 = new Observer2(ref viewBox, ref list);
+            list.AddObserver(observer1);
+            list.AddObserver(observer2);
         }
 
         private void addBut_Click(object sender, EventArgs e)
@@ -41,15 +47,6 @@ namespace lab_2
             }
             else
                 MessageBox.Show("Enter item!");
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string[] itemList = list.Map();
-            string text = "";
-            foreach (string s in itemList)
-                text += s + "\r\n";
-            viewBox.Text = text;
-        }
+        }        
     }
 }
